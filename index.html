@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vinicola App - by Gustavo Chivará</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🍷 Vinicola App</h1>
+      <p>Powered by <strong>NostromO SCv</strong> | Gustavo Chivará, Ing. Químico</p>
+    </header>
+
+    <div class="form-section">
+      <h2>📝 Datos de Producción</h2>
+      <form id="production-form">
+        <label>Nombre/Fábrica:</label>
+        <input type="text" id="name" required>
+
+        <label>Número de Lote:</label>
+        <input type="text" id="batch" required>
+
+        <label>Fecha:</label>
+        <input type="date" id="date" required>
+
+        <h3>🧪 Cálculos Técnicos</h3>
+        <label>Gravedad Inicial (OG):</label>
+        <input type="number" id="og" step="0.001" placeholder="Ej: 1.080">
+
+        <label>Gravedad Final (FG):</label>
+        <input type="number" id="fg" step="0.001" placeholder="Ej: 1.010">
+
+        <label>Corección temperatura del Mosto (°C):</label>
+        <input type="number" id="temp" placeholder="Ej: 25">
+
+        <label>ABV Deseado (%):</label>
+        <input type="number" id="abv-desired" step="0.1" placeholder="Ej: 12.5">
+
+        <button type="button" onclick="calculateAll()">Calcular Todo</button>
+      </form>
+    </div>
+
+    <div class="result-section" id="results" style="display: none;">
+      <h2>📊 Resultados</h2>
+      <div id="calculation-result"></div>
+      <button onclick="generatePDF()">Exportar a PDF</button>
+    </div>
+
+    <footer>
+      <p>Consultoría: Gustavo Chivará | Cel: 319 253 58 75 | chivaragustavo@gmail.com | Colombia</p>
+      <div class="ads">
+        <!-- Espacio para Google AdSense -->
+        <p>Publicidad aquí</p>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
